@@ -3,7 +3,6 @@ let myWindow;
 // get all <a> tags containing files and open modal
 const openFile = () => {
   const files = document.querySelectorAll('[class*="file"]');
-  const patternFileExtension = /\.([0-9a-z]+)(?:[\?#]|$)/i;
   for (let n in files) {
     if (files.hasOwnProperty(n)) {
       files[n].addEventListener("click", e => {

@@ -3,17 +3,24 @@
 
 // example of variables
 @main-color: #428bca;
-@main-color-hover: darken(@main-color, 10%);
+@main-color-hover: darken(@main-color, 30%);
+@border: 0.0625rem solid rgba(255, 255, 255, 0.5);
 @font-size: calc(1em + 0.5vw);
 
+html {
+  height: 100%;
+}
 body {
+  min-height: 100%;
   padding: 1rem;
   background-color: @main-color;
   font-family: Helvetica, sans-serif;
   font-size: @font-size;
+  text-align: center;
 }
 // example of nested rule with parent selector
 a, input, button {
+  margin: 0.5rem;
   font-size: @font-size;
   color: darken(@main-color, 20%);
   text-decoration: none;
@@ -21,4 +28,8 @@ a, input, button {
     color: @main-color-hover;
     text-decoration: none;
   }
+}
+form {
+  width: auto;
+  border: @border;
 }

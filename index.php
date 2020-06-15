@@ -1,8 +1,8 @@
 <?php
 
 // included files
-include 'init_directory.php';
 include 'header.php';
+include 'init_directory.php';
 include 'directory_variables.php';
 include 'file_actions.php';
 
@@ -35,9 +35,11 @@ echo "<button type=\"submit\" name=\"delete\">delete</button>";
 echo "<button type=\"submit\" name=\"copy\">copy</button>";
 echo "<button type=\"submit\" name=\"cut\">cut</button>";
 echo "<button type=\"submit\" name=\"paste\">paste</button>";
+
+// current directory's content
 echo "<table>";
 
-// list current directory's content
+// get current directory's content
 $cwd = scandir($dir);
 // format url to open files
 $url = str_replace(dirname(realpath(__DIR__)), $base_url, $dir);

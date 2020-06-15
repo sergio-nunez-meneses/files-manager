@@ -1,11 +1,18 @@
+html {
+  height: 100%;
+}
 body {
+  min-height: 100%;
+  padding: 1rem;
   background-color: #428bca;
   font-family: Helvetica, sans-serif;
   font-size: calc(1.5em);
+  text-align: center;
 }
 a,
 input,
 button {
+  margin: 0.5rem;
   font-size: calc(1.5em);
   color: #245682;
   text-decoration: none;
@@ -13,6 +20,10 @@ button {
 a:hover,
 input:hover,
 button:hover {
-  color: #3071a9;
+  color: #193c5a;
   text-decoration: none;
+}
+form {
+  width: auto;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
 }
