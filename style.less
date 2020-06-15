@@ -1,0 +1,24 @@
+// out: style.css, sourcemap: true, compress: true;
+// main: style.less;
+
+// example of variables
+@main-color: #428bca;
+@main-color-hover: darken(@main-color, 10%);
+@font-size: calc(1em + 0.5vw);
+
+body {
+  padding: 1rem;
+  background-color: @main-color;
+  font-family: Helvetica, sans-serif;
+  font-size: @font-size;
+}
+// example of nested rule with parent selector
+a, input, button {
+  font-size: @font-size;
+  color: darken(@main-color, 20%);
+  text-decoration: none;
+  &:hover {
+    color: @main-color-hover;
+    text-decoration: none;
+  }
+}

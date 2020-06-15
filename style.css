@@ -1,0 +1,18 @@
+body {
+  background-color: #428bca;
+  font-family: Helvetica, sans-serif;
+  font-size: calc(1.5em);
+}
+a,
+input,
+button {
+  font-size: calc(1.5em);
+  color: #245682;
+  text-decoration: none;
+}
+a:hover,
+input:hover,
+button:hover {
+  color: #3071a9;
+  text-decoration: none;
+}
