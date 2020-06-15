@@ -27,3 +27,32 @@ form {
   width: auto;
   border: 0.0625rem solid rgba(255, 255, 255, 0.5);
 }
+.breadcrumb-container,
+.content-container {
+  display: flex;
+  justify-content: center;
+}
+.breadcrumb-container tr {
+  margin: 0.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+  background-color: #357ebd;
+}
+.breadcrumb-container td {
+  margin: 0.5rem;
+}
+.breadcrumb-container td:hover {
+  background-color: rgba(0, 69, 144, 0.5);
+}
+.content-container tr {
+  margin: 0.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+  background-color: #357ebd;
+}
+.content-container tr:hover {
+  background-color: rgba(0, 69, 144, 0.5);
+}
+tbody {
+  margin: 0.25rem 0;
+  display: flex;
+  flex-direction: column;
+}
