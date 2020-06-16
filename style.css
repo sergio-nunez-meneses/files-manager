@@ -9,6 +9,7 @@ body {
   font-family: Helvetica, sans-serif;
   font-size: calc(1.5em);
   text-align: center;
+  text-rendering: optimizeLegibility;
 }
 a,
 input,
@@ -16,38 +17,64 @@ button {
   margin: 0.5rem;
   font-size: calc(1.5em);
   text-decoration: none;
-  color: #192f42;
-  transition: all 0.1s;
 }
-a:hover,
+a {
+  color: #efefc8;
+}
+a:hover {
+  color: #192f42;
+  transition: all 0.3s;
+}
+input,
+button {
+  border: 0.0625rem solid #032734;
+  border-radius: 0.0625em;
+  padding: 0 1rem;
+}
 input:hover,
 button:hover {
-  color: #FFFAFA;
+  color: #efefc8;
   transition: all 0.3s;
+}
+input {
+  background-color: #006083;
+  color: #0ca5dd;
+}
+input:focus {
+  box-shadow: 0 0 0.1875em #000000;
+  transition: all 0.3s;
+}
+button {
+  background-color: #04394c;
+  color: #006083;
 }
 table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   background-color: #212529;
-  color: #fff;
+  color: #F5F5DC;
 }
 td {
   padding: 0.75rem;
   vertical-align: top;
 }
-tr:hover {
+.content-container tr:hover {
   background-color: #006083;
   transition: all 0.2s;
 }
-tr:not(:first-child) {
+.content-container tr:not(:first-child) {
   border-top: 0.0625rem solid #dee2e6;
 }
-tr:last-child {
+.content-container tr:last-child {
   border-bottom: 0.0625rem solid #dee2e6;
 }
 .breadcrumb-container tr {
   border: 0.0625rem solid #dee2e6;
+}
+.breadcrumb-container td:hover {
+  background-color: #006083;
+  transition: all 0.2s;
 }
 .breadcrumb-container td:not(:first-child),
 .content-container td:not(:first-child) {

@@ -14,45 +14,74 @@ body {
   font-family: Helvetica, sans-serif;
   font-size: @font-size;
   text-align: center;
+  text-rendering: optimizeLegibility;
 }
 a, input, button {
   margin: @margin;
   font-size: @font-size;
   text-decoration: none;
-  & {
-    color: darken(@link-color, 20%);
-    transition: all 0.1s;
-    &:hover {
-      color: @link-color-hover;
-      transition: all 0.3s;
-    }
+}
+a {
+  color: darken(@table-font-color, 5%);
+  &:hover {
+    color: darken(@link-color-hover, 20%);
+    transition: all 0.3s;
   }
+}
+input, button {
+  .border(darken(@body-color, 15%));
+  border-radius: 0.0625em;
+  padding: 0 @padding;
+  &:hover {
+    color: darken(@table-font-color, 5%);
+    transition: all 0.3s;
+  }
+}
+input {
+  background-color: saturate(@body-color, 20%);
+  color: lighten(@body-color, 20%);
+  &:focus {
+    box-shadow: 0 0 0.1875em darken(@body-color, 80%);
+    transition: all 0.3s;
+  }
+}
+button {
+  background-color: darken(@body-color, 10%);
+  color: saturate(@body-color, 80%);
 }
 table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   background-color: @table-color;
-  color: #fff;
+  color: @table-font-color;
 }
 td {
   padding: @padding - 0.25;
   vertical-align: top;
 }
-tr {
-  &:hover{
-    background-color: saturate(@body-color, 80%);
-    transition: all 0.2s;
-  }
-  &:not(:first-child) {
-    .border-top(@td-border-color);
-  }
-  &:last-child {
-    .border-bottom(@td-border-color);
+.content-container {
+  tr {
+    &:hover {
+      background-color: saturate(@body-color, 80%);
+      transition: all 0.2s;
+    }
+    &:not(:first-child) {
+      .border-top(@td-border-color);
+    }
+    &:last-child {
+      .border-bottom(@td-border-color);
+    }
   }
 }
 .breadcrumb-container tr {
   .border(@td-border-color);
+}
+.breadcrumb-container td {
+  &:hover {
+    background-color: saturate(@body-color, 80%);
+    transition: all 0.2s;
+  }
 }
 .breadcrumb-container, .content-container {
   td {
@@ -76,3 +105,6 @@ form {
   display: flex;
   justify-content: space-around;
 }
+
+
+// input[type="text"] {}
