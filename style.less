@@ -1,33 +1,67 @@
 // out: style.css, sourcemap: true, compress: true;
 // main: style.less;
 
-// example of variables
-@margin: 0.5rem;
-@border: 0.0625rem solid rgba(255, 255, 255, 0.5);
-@main-color: #428bca;
-@main-color-hover: darken(@main-color, 30%);
-@font-size: calc(1em + 0.5vw);
+@import "variables.less";
 
 html {
   height: 100%;
 }
 body {
   min-height: 100%;
+  margin: 0;
   padding: 1rem;
-  background-color: @main-color;
+  background-color: darken(@body-color, 10%);
   font-family: Helvetica, sans-serif;
   font-size: @font-size;
   text-align: center;
 }
-// example of nested rule with parent selector
 a, input, button {
   margin: @margin;
   font-size: @font-size;
-  color: darken(@main-color, 20%);
   text-decoration: none;
-  &:hover {
-    color: @main-color-hover;
-    text-decoration: none;
+  & {
+    color: darken(@link-color, 20%);
+    transition: all 0.1s;
+    &:hover {
+      color: @link-color-hover;
+      transition: all 0.3s;
+    }
+  }
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: @table-color;
+  color: #fff;
+}
+td {
+  padding: @padding - 0.25;
+  vertical-align: top;
+}
+tr {
+  &:hover{
+    background-color: saturate(@body-color, 80%);
+    transition: all 0.2s;
+  }
+  &:not(:first-child) {
+    .border-top(@td-border-color);
+  }
+  &:last-child {
+    .border-bottom(@td-border-color);
+  }
+}
+.breadcrumb-container tr {
+  .border(@td-border-color);
+}
+.breadcrumb-container, .content-container {
+  td {
+    &:not(:first-child) {
+      .border-left(@td-border-color);
+    }
+    &:not(:last-child) {
+      .border-right(@td-border-color);
+    }
   }
 }
 form {
@@ -36,32 +70,10 @@ form {
 }
 
 .breadcrumb-container, .content-container {
-  display: flex;
-  justify-content: center;
-}
-
-.breadcrumb-container tr {
-  margin: @margin;
+  margin: (@margin + 0.5) 0;
   border: @border;
-  background-color: darken(@main-color, 5%);
-}
-.breadcrumb-container td {
-  margin: @margin;
-  &:hover{
-    background-color: fadeout(#004590, 50%)
-  }
-}
-
-.content-container tr {
-  margin: @margin;
-  border: @border;
-  background-color: darken(@main-color, 5%);
-  &:hover{
-    background-color: fadeout(#004590, 50%)
-  }
-}
-tbody {
-  margin: (@margin / 2) 0;
+  padding: @padding / 2;
+  background: @container-color;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }

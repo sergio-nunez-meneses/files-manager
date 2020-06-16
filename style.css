@@ -3,8 +3,9 @@ html {
 }
 body {
   min-height: 100%;
+  margin: 0;
   padding: 1rem;
-  background-color: #428bca;
+  background-color: #04394c;
   font-family: Helvetica, sans-serif;
   font-size: calc(1.5em);
   text-align: center;
@@ -14,45 +15,58 @@ input,
 button {
   margin: 0.5rem;
   font-size: calc(1.5em);
-  color: #245682;
   text-decoration: none;
+  color: #192f42;
+  transition: all 0.1s;
 }
 a:hover,
 input:hover,
 button:hover {
-  color: #193c5a;
-  text-decoration: none;
+  color: #FFFAFA;
+  transition: all 0.3s;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: #212529;
+  color: #fff;
+}
+td {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+tr:hover {
+  background-color: #006083;
+  transition: all 0.2s;
+}
+tr:not(:first-child) {
+  border-top: 0.0625rem solid #dee2e6;
+}
+tr:last-child {
+  border-bottom: 0.0625rem solid #dee2e6;
+}
+.breadcrumb-container tr {
+  border: 0.0625rem solid #dee2e6;
+}
+.breadcrumb-container td:not(:first-child),
+.content-container td:not(:first-child) {
+  border-left: 0.0625rem solid #dee2e6;
+}
+.breadcrumb-container td:not(:last-child),
+.content-container td:not(:last-child) {
+  border-right: 0.0625rem solid #dee2e6;
 }
 form {
   width: auto;
-  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.6);
 }
 .breadcrumb-container,
 .content-container {
+  margin: 1rem 0;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.6);
+  padding: 0.5rem;
+  background: #f68f1e;
   display: flex;
-  justify-content: center;
-}
-.breadcrumb-container tr {
-  margin: 0.5rem;
-  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
-  background-color: #357ebd;
-}
-.breadcrumb-container td {
-  margin: 0.5rem;
-}
-.breadcrumb-container td:hover {
-  background-color: rgba(0, 69, 144, 0.5);
-}
-.content-container tr {
-  margin: 0.5rem;
-  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
-  background-color: #357ebd;
-}
-.content-container tr:hover {
-  background-color: rgba(0, 69, 144, 0.5);
-}
-tbody {
-  margin: 0.25rem 0;
-  display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }

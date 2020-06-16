@@ -59,11 +59,17 @@ foreach ($cwd as $file) {
     echo "<tr>";
     echo "<td>";
     echo '<i class="fa fa-folder-o"></i><a href="?dir='. urlencode($path) . '" title="' . $path .'">' . $file .'</a></td>';
+    echo "<td>type</td>";
+    echo "<td>size</td>";
+    echo "<td>date</td>";
     echo "<td><input type=\"checkbox\" name=\"selected\" value=\"$path\"></td>";
     echo "</tr>";
   } else {
     echo "<tr>";
     echo "<td><i class=\"fa fa-file\"></i><a class=\"file\" href=\"${url}/${file}\" title=\"${url}/${file}\">$file</a></td>";
+    echo "<td>type</td>";
+    echo "<td>size</td>";
+    echo "<td>date</td>";
     echo "<td><input type=\"checkbox\" name=\"selected\" value=\"$path\"></td>";
     echo "</tr>";
   }
